@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">tp_parte_2</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="repetir_contrase_a">Repetir contraseña</string>
+    <string name="ingrese_contrase_a">Ingrese contraseña</string>
+    <string name="ingresar_monto">Ingresar monto</string>
+    <string name="Logearse">Logearse</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="games_break">Games Break</string>
+</resources>
