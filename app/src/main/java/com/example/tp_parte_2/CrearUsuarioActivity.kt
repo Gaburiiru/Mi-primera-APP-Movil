@@ -1,3 +1,5 @@
+package com.example.tp_parte_2
+
 import Entidades.User
 import Repository.UserRepository
 import Repository.UserRepository.existe
@@ -8,7 +10,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.example.tp_parte_2.R
 import java.time.LocalDate
 
 class CrearUsuarioActivity : AppCompatActivity() {

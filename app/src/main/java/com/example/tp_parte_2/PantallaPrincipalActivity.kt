@@ -1,5 +1,8 @@
 package com.example.tp_parte_2
 
-class PantallaPrincipalActivity {
+import android.app.Activity
+
+
+class PantallaPrincipalActivity : Activity() {
 
 }
