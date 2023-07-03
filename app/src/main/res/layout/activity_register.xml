@@ -7,8 +7,8 @@
 
     <EditText
         android:id="@+id/nombre_de_usuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="50dp"
         android:ems="10"
         android:gravity="center"
@@ -16,15 +16,15 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/ingrese_contrase_a"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="50dp"
         android:ems="10"
         android:gravity="center"
@@ -39,24 +39,23 @@
 
     <EditText
         android:id="@+id/apellido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/apellido"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/ingresar_monto"
+        app:layout_constraintBottom_toTopOf="@+id/confirmar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.805" />
 
     <EditText
         android:id="@+id/ingrese_contrase_a"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="50dp"
         android:ems="10"
         android:gravity="center"
@@ -71,34 +70,19 @@
 
     <EditText
         android:id="@+id/repetir_contrase_a"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="50dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/repetir_contrase_a"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/nombre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <EditText
-        android:id="@+id/ingresar_monto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/ingresar_monto"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/confirmar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.962" />
 
     <Button
         android:id="@+id/confirmar"

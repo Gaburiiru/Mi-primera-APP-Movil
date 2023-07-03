@@ -1,4 +1,4 @@
-package com.example.tp_parte_2
+package com.example.tp_parte_2.Login.Crear_user
 
 import Entidades.User
 import Repository.UserRepository
@@ -10,7 +10,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import java.time.LocalDate
+import com.example.tp_parte_2.R
+import java.util.Calendar
+import java.text.SimpleDateFormat
+
 
 class CrearUsuarioActivity : AppCompatActivity() {
 
@@ -19,7 +22,6 @@ class CrearUsuarioActivity : AppCompatActivity() {
     private lateinit var confirmPw: EditText
     private lateinit var nombre: EditText
     private lateinit var apellido: EditText
-    private lateinit var money: EditText
     private lateinit var btnCrearUsuario: Button
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -32,21 +34,22 @@ class CrearUsuarioActivity : AppCompatActivity() {
         confirmPw = findViewById(R.id.repetir_contrase_a)
         nombre = findViewById(R.id.nombre)
         apellido = findViewById(R.id.apellido)
-        money = findViewById(R.id.ingresar_monto)
         btnCrearUsuario = findViewById(R.id.confirmar)
 
         btnCrearUsuario.setOnClickListener {
 
             if(validateInput()) {
 
-                val fecha: LocalDate = LocalDate.now()
-                val nuevo = User("","","","","",0.0,fecha.toString())
+
+                val fecha = Calendar.getInstance()
+                val formatoFecha = SimpleDateFormat("yyyy-MM-dd")
+                val fechaFormateada = formatoFecha.format(fecha.time)
+                val nuevo = User("","","","","",0.0,fechaFormateada.toString())
                 val usuario = usuario.text.toString()
                 val password = password.text.toString()
                 val confirmarPassword = confirmPw.text.toString()
                 val nombre = nombre.text.toString()
                 val apellido = apellido.text.toString()
-                val money = money.text
 
                 if (!password.equals(confirmarPassword)) {
                     Toast.makeText(this, "Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();

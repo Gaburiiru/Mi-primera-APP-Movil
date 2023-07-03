@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Tp_parte_2"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Login.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <!--activity crearUser-->
-        <activity android:name=".CrearUsuarioActivity"/>
+        <activity android:name=".Login.Crear_user.CrearUsuarioActivity"/>
         <!--activity panatlla principal-->
         <activity android:name=".PantallaPrincipalActivity"/>
     </application>

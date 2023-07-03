@@ -1,10 +1,12 @@
-package com.example.tp_parte_2
+package com.example.tp_parte_2.Login
 
 import Repository.UserRepository
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.tp_parte_2.Login.Crear_user.CrearUsuarioActivity
+import com.example.tp_parte_2.PantallaPrincipalActivity
 import com.example.tp_parte_2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
