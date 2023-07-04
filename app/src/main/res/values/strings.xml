@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name" translatable="false">tp_parte_2</string>
+    <string name="nombre_de_usuario" translatable="false">Nombre de usuario</string>
+    <string name="nombre" translatable="false">Nombre</string>
+    <string name="apellido" translatable="false">Apellido</string>
+    <string name="repetir_contrase_a" translatable="false">Repetir contraseña</string>
+    <string name="ingrese_contrase_a" translatable="false">Ingrese contraseña</string>
+    <string name="ingresar_monto" translatable="false">Ingresar monto</string>
+    <string name="Logearse" translatable="false">Logearse</string>
+    <string name="registrarse" translatable="false"><b>Registrarse</b></string>
+    <string name="iniciar_sesion" translatable="false">Iniciar sesion</string>
+    <string name="games_break" translatable="false">Games Break</string>
+    <string name="logo" translatable="false">logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
