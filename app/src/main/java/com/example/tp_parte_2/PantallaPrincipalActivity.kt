@@ -8,6 +8,7 @@ import androidx.fragment.app.commit
 
 
 class PantallaPrincipalActivity : AppCompatActivity() {
+    val saludo = "Hola"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
