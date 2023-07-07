@@ -1,8 +1,9 @@
 package com.example.tp_parte_2
 
 
-import Repository.PurchaseRepository
-import Repository.PurchaseRepositoryProvider
+
+import Repository.PurchaseRepositoryProvider.Companion.purchasesList
+import Repository.UserRepository.session
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
@@ -38,9 +39,11 @@ class PantallaPrincipalActivity : AppCompatActivity() {
             }
         }*/
     }
+
     private fun initRecyclerView(){
+        val userId = session[0].id
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerHistorial)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = HistorialAdapter(PurchaseRepositoryProvider.purchasesList)
+        recyclerView.adapter = HistorialAdapter(userId, purchasesList)
     }
 }

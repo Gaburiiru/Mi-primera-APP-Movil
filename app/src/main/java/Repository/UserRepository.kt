@@ -28,7 +28,7 @@ object UserRepository {
         for (elemento in users) {
             if (elemento.nickName.equals(nickname) && elemento.password.equals(password)) {
                 usuarioIniciado = elemento
-                session.add(usuarioIniciado)
+                session.add(elemento)
             }
         }
         return usuarioIniciado
