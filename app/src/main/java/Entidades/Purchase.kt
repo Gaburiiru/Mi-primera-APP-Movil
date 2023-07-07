@@ -2,9 +2,9 @@ package Entidades
 
 data class Purchase(
     val id: Long,
-    private val userId: String,
-    private val gameId: Long,
-    private val amount: Double,
-    private val createdDate: String,
-    private val timeDate: String,
+    val userId: String,
+    val gameId: Long,
+    val amount: Double,
+    val createdDate: String,
+    val timeDate: String,
 )

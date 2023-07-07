@@ -7,6 +7,7 @@ import androidx.annotation.RequiresApi
 object UserRepository {
 
     val users = mutableListOf<User>()
+    val session = mutableListOf<User>()
 
     init {
         users.add(User("1504L", "BRIAN_BAYARRI", "abc123", "Brian", "Bayarri", 350.50, "2022-12-10"))
@@ -27,6 +28,7 @@ object UserRepository {
         for (elemento in users) {
             if (elemento.nickName.equals(nickname) && elemento.password.equals(password)) {
                 usuarioIniciado = elemento
+                session.add(usuarioIniciado)
             }
         }
         return usuarioIniciado
