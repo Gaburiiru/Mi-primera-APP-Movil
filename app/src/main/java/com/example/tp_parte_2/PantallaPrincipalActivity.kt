@@ -1,43 +1,25 @@
 package com.example.tp_parte_2
 
-
-
+import NavarFragment
 import Repository.PurchaseRepositoryProvider.Companion.purchasesList
 import Repository.UserRepository.session
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tp_parte_2.Login.ComprasActivity
 import com.example.tp_parte_2.adapter.HistorialAdapter
 
+class PantallaPrincipalActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
 
-class PantallaPrincipalActivity : AppCompatActivity() {
-
-    private lateinit var btnInicio: Button
-    private lateinit var btnBiblioteca: Button
-    private lateinit var btnCompras: Button
-    private lateinit var btnRecarga: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
         initRecyclerView()
 
-        btnInicio = findViewById(R.id.inicio)
-        btnBiblioteca = findViewById(R.id.biblioteca)
-        btnCompras = findViewById(R.id.compras)
-        btnRecarga = findViewById(R.id.recargar)
-
-/*        btnBiblioteca.setOnClickListener {
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                add<PrincipalFragment>(R.id.fragmentContainerHistorial)
-                PurchaseRepository.purchasesList
-            }
-        }*/
+        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavarFragment
+        navarFragment?.setOnBotonClickListener(this)
     }
 
     private fun initRecyclerView(){
@@ -45,5 +27,21 @@ class PantallaPrincipalActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerHistorial)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = HistorialAdapter(userId, purchasesList)
+    }
+
+    override fun onInicioClick() {
+    }
+
+    override fun onBibliotecaClick() {
+        // Implementación deseada para el evento de clic en el botón "Biblioteca"
+    }
+
+    override fun onComprasClick() {
+        val intent = Intent(this, ComprasActivity::class.java)
+        startActivity(intent)
+    }
+
+    override fun onRecargaClick() {
+        // Implementación deseada para el evento de clic en el botón "Recarga"
     }
 }
