@@ -22,6 +22,12 @@
         <activity android:name=".Login.Crear_user.CrearUsuarioActivity"/>
         <!--activity panatlla principal-->
         <activity android:name=".PantallaPrincipalActivity"/>
+        <!--activity biblioteca-->
+        <activity android:name=".BibliotecaActivity"/>
+        <!--activity compras-->
+        <activity android:name=".ComprasActivity"/>
+        <!--activity recargar-->
+        <activity android:name=".RecargarActivity"/>
     </application>
 
 </manifest>

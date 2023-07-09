@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/fondo"
     android:layout_height="match_parent">
 
     <EditText
@@ -13,6 +13,7 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/nombre_de_usuario"
+        android:textColorHint="@color/white"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/ingrese_contrase_a"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +29,7 @@
         android:layout_marginBottom="50dp"
         android:ems="10"
         android:gravity="center"
+        android:textColorHint="@color/white"
         android:hint="@string/nombre"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/apellido"
@@ -43,6 +45,7 @@
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
+        android:textColorHint="@color/white"
         android:hint="@string/apellido"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/confirmar"
@@ -59,6 +62,7 @@
         android:layout_marginBottom="50dp"
         android:ems="10"
         android:gravity="center"
+        android:textColorHint="@color/white"
         android:hint="@string/ingrese_contrase_a"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/repetir_contrase_a"
@@ -75,6 +79,7 @@
         android:layout_marginBottom="28dp"
         android:ems="10"
         android:gravity="center"
+        android:textColorHint="@color/white"
         android:hint="@string/repetir_contrase_a"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/nombre"
@@ -86,12 +91,15 @@
 
     <Button
         android:id="@+id/confirmar"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorboton"
         android:text="@string/Logearse"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.92" />

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/fondo"
     android:layout_height="match_parent">
 
 
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/games_break"
+        android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,12 +31,12 @@
         android:hint="@string/nombre_de_usuario"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_bias="0.357"
+        app:layout_constraintVertical_bias="0.246"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -47,6 +49,7 @@
         android:gravity="center"
         android:hint="@string/ingrese_contrase_a"
         android:inputType="textPassword"
+        android:textColorHint="@color/white"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,10 +60,13 @@
 
     <Button
         android:id="@+id/Logearse"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/Logearse"
+        android:backgroundTint="@color/colorboton"
+        android:textSize="16sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,13 +75,14 @@
 
     <Button
         android:id="@+id/registrarse"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         android:outlineProvider="none"
         android:text="@string/registrarse"
-        android:textColor="#673AB7"
+        android:textSize="16sp"
+        android:textColor="@color/colorboton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,13 +95,12 @@
         android:layout_width="163dp"
         android:layout_height="156dp"
         android:layout_marginTop="15dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/games_break"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/mandoo"
-        android:contentDescription="@string/logo" />
+        app:srcCompat="@drawable/mandoo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

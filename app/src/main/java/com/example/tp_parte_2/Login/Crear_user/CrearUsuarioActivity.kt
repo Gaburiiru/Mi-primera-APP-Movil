@@ -50,18 +50,25 @@ class CrearUsuarioActivity : AppCompatActivity() {
                 val confirmarPassword = confirmPw.text.toString()
                 val nombre = nombre.text.toString()
                 val apellido = apellido.text.toString()
-
-                if (!password.equals(confirmarPassword)) {
-                    Toast.makeText(this, "Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();
-                } else if (existe(usuario,password)) {
-                    Toast.makeText(this, "Nombre de usuario ya existe, cambielo", Toast.LENGTH_SHORT).show();
-                } else {
-                    nuevo.nickName = usuario;
-                    nuevo.password = password;
-                    nuevo.name = nombre;
-                    nuevo.surname = apellido;
-                    UserRepository.agregar(nuevo);
-                    Toast.makeText(this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show();
+                if (nombre.matches("[a-zA-Z]+".toRegex())) {
+                    if (apellido.matches("[a-zA-Z]+".toRegex())) {
+                        if (!password.equals(confirmarPassword)) {
+                            Toast.makeText(this, "Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();
+                        } else if (existe(usuario,password)) {
+                            Toast.makeText(this, "Nombre de usuario ya existe, cambielo", Toast.LENGTH_SHORT).show();
+                        } else {
+                            nuevo.nickName = usuario;
+                            nuevo.password = password;
+                            nuevo.name = nombre;
+                            nuevo.surname = apellido;
+                            UserRepository.agregar(nuevo);
+                            Toast.makeText(this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(this, "El apellido no puede contener numeros o estar vacio.", Toast.LENGTH_SHORT).show()
+                    }
+                }else{
+                    Toast.makeText(this, "El nombre no puede contener numeros o estar vacio.", Toast.LENGTH_SHORT).show()
                 }
             }
             else {

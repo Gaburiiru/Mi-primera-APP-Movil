@@ -9,8 +9,11 @@ data class User(
     var money: Double = 0.0,
     var createdDate: String = ""
 ) {
-    fun restarMoney(compra:Double) {
-        this.money = compra
+    fun restarMoney(compra: Double) {
+        this.money -= compra
+    }
+    fun recargarMoney(money:Double) {
+        this.money += money
     }
     fun reintegroMoney(cashback:Double) {
         this.money += cashback
