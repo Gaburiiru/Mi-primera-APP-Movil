@@ -23,11 +23,13 @@
         <!--activity panatlla principal-->
         <activity android:name=".PantallaPrincipalActivity"/>
         <!--activity biblioteca-->
-        <activity android:name=".BibliotecaActivity"/>
+        <activity android:name=".biblioteca.BibliotecaActivity"/>
         <!--activity compras-->
         <activity android:name=".ComprasActivity"/>
         <!--activity recargar-->
         <activity android:name=".RecargarActivity"/>
+        <!--activity carrito-->
+        <activity android:name=".biblioteca.CarritoActivity"/>
     </application>
 
 </manifest>

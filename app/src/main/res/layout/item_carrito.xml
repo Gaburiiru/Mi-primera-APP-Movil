@@ -25,12 +25,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/ivGameBiblioteca"
-        app:layout_constraintTop_toBottomOf="@+id/tvGenreGameBiblioteca"
+        app:layout_constraintStart_toEndOf="@+id/ivGameCarrito"
+        app:layout_constraintTop_toBottomOf="@+id/tvGenreGameCarrito"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/ivGameBiblioteca"
+        android:id="@+id/ivGameCarrito"
         android:layout_width="120dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +41,7 @@
         tools:background="@color/black" />
 
     <TextView
-        android:id="@+id/tvGameNameBiblioteca"
+        android:id="@+id/tvGameNameCarrito"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -54,13 +54,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/ivGameBiblioteca"
+        app:layout_constraintStart_toEndOf="@+id/ivGameCarrito"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.13"
         tools:text="NeedForSpeed" />
 
     <TextView
-        android:id="@+id/tvReleaseGameBiblioteca"
+        android:id="@+id/tvReleaseGameCarrito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -69,12 +69,12 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/ivGameBiblioteca"
-        app:layout_constraintTop_toBottomOf="@id/tvGameNameBiblioteca"
+        app:layout_constraintStart_toEndOf="@+id/ivGameCarrito"
+        app:layout_constraintTop_toBottomOf="@id/tvGameNameCarrito"
         tools:text="2004" />
 
     <TextView
-        android:id="@+id/tvGenreGameBiblioteca"
+        android:id="@+id/tvGenreGameCarrito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -83,12 +83,12 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/ivGameBiblioteca"
-        app:layout_constraintTop_toBottomOf="@+id/tvReleaseGameBiblioteca"
+        app:layout_constraintStart_toEndOf="@+id/ivGameCarrito"
+        app:layout_constraintTop_toBottomOf="@+id/tvReleaseGameCarrito"
         tools:text="Racing" />
 
     <TextView
-        android:id="@+id/tvPriceGameBiblioteca"
+        android:id="@+id/tvPriceGameCarrito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -100,22 +100,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.011"
         app:layout_constraintStart_toEndOf="@+id/simbolo_de_peso"
-        app:layout_constraintTop_toBottomOf="@+id/tvGenreGameBiblioteca"
+        app:layout_constraintTop_toBottomOf="@+id/tvGenreGameCarrito"
         app:layout_constraintVertical_bias="0.0"
         tools:text="200,2" />
 
     <Button
-        android:id="@+id/btnComprar"
+        android:id="@+id/btnEliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:backgroundTint="@color/colorboton"
-        android:text="@string/comprar"
+        android:backgroundTint="@color/botonEliminar"
+        android:text="@string/eliminar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.698"
-        app:layout_constraintStart_toEndOf="@+id/tvPriceGameBiblioteca"
+        app:layout_constraintStart_toEndOf="@+id/tvPriceGameCarrito"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.852" />
 

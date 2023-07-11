@@ -8,33 +8,33 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="5dp"
         android:background="@drawable/tarjeta_info"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084"
-        tools:context=".PrincipalFragment"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="4dp">
+        tools:context=".PrincipalFragment">
 
         <TextView
             android:id="@+id/bienvenidoFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
             android:text="@string/bienvenido"
             android:textColor="@color/white"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.282"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.209"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -42,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
+            android:layout_marginTop="30dp"
             android:text="user"
             android:textColor="@color/white"
             android:textSize="30sp"
@@ -50,19 +51,21 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/bienvenidoFragment"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.209"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
             android:text="fecha de registro"
-            android:textColor="@color/white"
-            android:textSize="10sp"
+            android:textColor="@color/datosInfo"
+            android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.211"
+            app:layout_constraintHorizontal_bias="0.013"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.573"
@@ -72,27 +75,30 @@
             android:id="@+id/dateInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
             android:text="fecha"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textColor="@color/datosInfo"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.195"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.747"
+            app:layout_constraintVertical_bias="0.811"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
             android:text="saldo disponible"
-            android:textColor="@color/white"
-            android:textSize="10sp"
+            android:textColor="@color/datosInfo"
+            android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.818"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.573"
@@ -102,39 +108,29 @@
             android:id="@+id/moneyInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
             android:text="monto"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textColor="@color/datosInfo"
+            android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.779"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.747"
+            app:layout_constraintVertical_bias="0.811"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHistorial"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerHistorial"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="0dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_Navar"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="21dp" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_Navar"
@@ -145,23 +141,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="1.0"
         tools:layout="@layout/fragment_navar" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:text="@string/compras"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

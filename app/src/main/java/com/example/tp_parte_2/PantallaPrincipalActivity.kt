@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp_parte_2.adapter.HistorialAdapter
+import com.example.tp_parte_2.biblioteca.BibliotecaActivity
 
 class PantallaPrincipalActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
     private lateinit var nickNameInfo: TextView
@@ -39,7 +40,7 @@ class PantallaPrincipalActivity : AppCompatActivity(), NavarFragment.OnBotonClic
             if (user.id == currentUser.id){
                 nickNameInfo.text = user.nickName
                 dateInfo.text = user.createdDate
-                moneyInfo.text = user.money.toString()
+                moneyInfo.text = String.format("%.2f", user.money)
             }
         }
     }

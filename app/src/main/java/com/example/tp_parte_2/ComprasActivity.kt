@@ -4,7 +4,7 @@ import NavarFragment
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil.setContentView
+import com.example.tp_parte_2.biblioteca.BibliotecaActivity
 
 class ComprasActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {

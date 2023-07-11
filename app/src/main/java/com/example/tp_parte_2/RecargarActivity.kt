@@ -7,13 +7,12 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import Entidades.User
-import Repository.UserRepository
-import android.text.Editable
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tp_parte_2.biblioteca.BibliotecaActivity
 
 class RecargarActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
     private lateinit var saldo: TextView
@@ -40,17 +39,17 @@ class RecargarActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener
 
         recargarMonto = findViewById(R.id.RecargarMonto)
 
-        saldo.text = currentUser.money.toString()
+        saldo.text = String.format("%.2f", currentUser.money)
 
         val buttonRecargar = findViewById<Button>(R.id.btnRecargar)
         buttonRecargar.setOnClickListener {
             val montoRecarga = recargarMonto.text.toString().toDoubleOrNull()
-            if (montoRecarga != null && "-?\\d+(\\.\\d+)?".toRegex().matches(recargarMonto.text.toString())) {
+            if (montoRecarga != null && montoRecarga > 0 && "-?\\d+(\\.\\d+)?".toRegex().matches(recargarMonto.text.toString())) {
                 currentUser.recargarMoney(montoRecarga)
-                saldo.text = currentUser.money.toString()
+                saldo.text = String.format("%.2f", currentUser.money)
                 recargarMonto.setText("")
             } else {
-                Toast.makeText(this, "El monto no puede contener caracteres no numericos.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "El monto ingresado no es válido.", Toast.LENGTH_SHORT).show()
             }
         }
     }
