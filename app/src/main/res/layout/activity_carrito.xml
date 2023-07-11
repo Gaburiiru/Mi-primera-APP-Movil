@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_Navar"
-        android:name="NavarFragment"
+        android:name="NavbarFragment"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,10 +105,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="30dp"
-            android:background="@color/azul"
+            android:background="@drawable/estilo_buscador"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

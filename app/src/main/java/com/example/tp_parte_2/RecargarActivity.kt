@@ -1,6 +1,6 @@
 package com.example.tp_parte_2
 
-import NavarFragment
+import NavbarFragment
 import Repository.UserRepository.session
 import Repository.UserRepository.users
 import android.annotation.SuppressLint
@@ -14,7 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tp_parte_2.biblioteca.BibliotecaActivity
 
-class RecargarActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
+class RecargarActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener {
     private lateinit var saldo: TextView
     private lateinit var recargarMonto: EditText
     private lateinit var currentUser: User
@@ -26,7 +26,7 @@ class RecargarActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener
 
         currentUser = session[0]
 
-        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavarFragment
+        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavbarFragment
         navarFragment?.setOnBotonClickListener(this)
 
         saldo = findViewById(R.id.saldo)

@@ -1,13 +1,10 @@
 package com.example.tp_parte_2.biblioteca
 
 import Entidades.Game
-import NavarFragment
+import NavbarFragment
 import Repository.CarritoRepository
-import Repository.CarritoRepository.carritoTotal
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerviewexamplo.adapter.CarritoAdapter
@@ -17,10 +14,7 @@ import com.example.tp_parte_2.R
 import com.example.tp_parte_2.RecargarActivity
 import com.example.tp_parte_2.databinding.ActivityCarritoBinding
 
-@SuppressLint("StaticFieldLeak")
-private lateinit var totalApagar: TextView
-
-class CarritoActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
+class CarritoActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener {
 
     private lateinit var binding: ActivityCarritoBinding
     private lateinit var carritoMutableList: MutableList<Game>
@@ -34,7 +28,7 @@ class CarritoActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener 
         setContentView(binding.root)
         initRecyclerView()
 
-        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavarFragment
+        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavbarFragment
         navarFragment?.setOnBotonClickListener(this)
 
         updateTotalApagar()

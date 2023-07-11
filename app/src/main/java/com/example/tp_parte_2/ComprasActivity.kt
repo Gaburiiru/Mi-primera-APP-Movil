@@ -1,17 +1,17 @@
 package com.example.tp_parte_2
 
-import NavarFragment
+import NavbarFragment
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tp_parte_2.biblioteca.BibliotecaActivity
 
-class ComprasActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
+class ComprasActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compras)
 
-        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavarFragment
+        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavbarFragment
         navarFragment?.setOnBotonClickListener(this)
     }
 

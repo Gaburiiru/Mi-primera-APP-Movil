@@ -4,55 +4,49 @@ import Repository.PurchaseRepositoryProvider.Companion.purchasesList
 import Repository.UserRepository.session
 import android.content.Context
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.tp_parte_2.R
+import com.example.tp_parte_2.databinding.ItemBibliotecaBinding
 
-class BibliotecaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class BibliotecaViewHolder(private val context: Context, view: View) : RecyclerView.ViewHolder(view) {
 
-    private val gameName = view.findViewById<TextView>(R.id.tvGameNameBiblioteca)
-    private val gameRelease = view.findViewById<TextView>(R.id.tvReleaseGameBiblioteca)
-    private val gameGenres = view.findViewById<TextView>(R.id.tvGenreGameBiblioteca)
-    private val gamePrice = view.findViewById<TextView>(R.id.tvPriceGameBiblioteca)
-    private val gamePhoto = view.findViewById<ImageView>(R.id.ivGameBiblioteca)
-    private val botonComprar = view.findViewById<Button>(R.id.btnComprar)
+    val binding = ItemBibliotecaBinding.bind(view)
 
-    fun render(context: Context, juego: Game) {
+    fun render(
+        context: Context,
+        game: Game
+    ) {
         var acumulador: Double = 0.0
         val carrito = CarritoRepository.carrito
 
-        gameName.text = juego.name
-        gameRelease.text = juego.releaseDate
-        gameGenres.text = juego.genre
-        gamePrice.text = juego.price.toString()
-        Glide.with(gamePhoto.context).load(juego.permalink).into(gamePhoto)
-
-        botonComprar.setOnClickListener {
+        binding.tvGameNameBiblioteca.text = game.name
+        binding.tvReleaseGameBiblioteca.text = game.releaseDate
+        binding.tvGenreGameBiblioteca.text = game.genre
+        binding.tvPriceGameBiblioteca.text = game.price.toString()
+        Glide.with(binding.ivGameBiblioteca.context).load(game.permalink)
+            .into(binding.ivGameBiblioteca)
+        binding.btnComprar.setOnClickListener {
             val userId = session[0].id
-            val gameId = juego.id
+            val gameId = game.id
 
             val isGamePurchased = purchasesList.any { it.gameId == gameId && it.userId == userId }
 
-            if (!carrito.contains(juego)) {
+            if (!carrito.contains(game)) {
                 if (!isGamePurchased) {
-                    showToast(context, "El juego se agregó al carrito")
-                    carrito.add(juego)
-                    acumulador += juego.price
+                    showToast("El juego se agregó al carrito")
+                    carrito.add(game)
+                    acumulador += game.price
                     CarritoRepository.carritoTotal.add(acumulador)
                 } else {
-                    showToast(context, "El usuario ya ha comprado este juego")
+                    showToast("El usuario ya ha comprado este juego")
                 }
             } else {
-                showToast(context, "El juego ya está en el carrito")
+                showToast("El juego ya está en el carrito")
             }
         }
     }
-
-    private fun showToast(context: Context, message: String) {
+    private fun showToast(message: String) {
         Toast.makeText(context.applicationContext, message, Toast.LENGTH_SHORT).show()
     }
 }

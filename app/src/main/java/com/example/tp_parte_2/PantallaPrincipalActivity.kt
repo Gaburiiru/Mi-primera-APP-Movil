@@ -1,7 +1,7 @@
 package com.example.tp_parte_2
 
 import Entidades.User
-import NavarFragment
+import NavbarFragment
 import Repository.PurchaseRepositoryProvider.Companion.purchasesList
 import Repository.UserRepository
 import Repository.UserRepository.session
@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tp_parte_2.adapter.HistorialAdapter
 import com.example.tp_parte_2.biblioteca.BibliotecaActivity
 
-class PantallaPrincipalActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
+class PantallaPrincipalActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener {
     private lateinit var nickNameInfo: TextView
     private lateinit var dateInfo: TextView
     private lateinit var moneyInfo: TextView
@@ -27,7 +27,7 @@ class PantallaPrincipalActivity : AppCompatActivity(), NavarFragment.OnBotonClic
         setContentView(R.layout.activity_principal)
         initRecyclerView()
 
-        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavarFragment
+        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavbarFragment
         navarFragment?.setOnBotonClickListener(this)
 
 

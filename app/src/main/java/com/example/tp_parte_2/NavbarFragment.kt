@@ -7,7 +7,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.tp_parte_2.R
 
-class NavarFragment : Fragment() {
+class NavbarFragment : Fragment() {
 
     private lateinit var btnInicio: Button
     private lateinit var btnBiblioteca: Button
@@ -49,8 +49,8 @@ class NavarFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(): NavarFragment {
-            return NavarFragment()
+        fun newInstance(): NavbarFragment {
+            return NavbarFragment()
         }
     }
 }

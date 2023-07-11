@@ -1,31 +1,65 @@
 package com.example.tp_parte_2.biblioteca
 
-import NavarFragment
+import Entidades.Game
+import NavbarFragment
 import Repository.GameRepository
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.FragmentContainerView
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-
 import com.example.tp_parte_2.ComprasActivity
 import com.example.tp_parte_2.PantallaPrincipalActivity
 import com.example.tp_parte_2.R
 import com.example.tp_parte_2.RecargarActivity
 import com.example.tp_parte_2.adapter.BibliotecaAdapter
-class BibliotecaActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
+import com.example.tp_parte_2.databinding.ActivityBibliotecaBinding
+
+class BibliotecaActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener {
 
     private lateinit var btnCarrito: Button
-    private lateinit var recyclerViewBiblioteca: RecyclerView
-    private lateinit var bibliotecaAdapter: BibliotecaAdapter
+    private lateinit var binding: ActivityBibliotecaBinding
+    private var gameMutableList: MutableList<Game> =
+        GameRepository.games.toMutableList()
+    private lateinit var adapter: BibliotecaAdapter
+    private val llmanager = LinearLayoutManager(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_biblioteca)
+        binding = ActivityBibliotecaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.etBuscar.addTextChangedListener { userFilter ->
+            val juegosFiltrados =
+                gameMutableList.filter { game ->
+                    game.name.lowercase().contains(userFilter.toString().lowercase())
+                }
+            adapter.updateGameList(juegosFiltrados)
+        }
+        binding.etBuscar.setOnEditorActionListener { _, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE || event.keyCode == KeyEvent.KEYCODE_ENTER) {
+                // Ocultar el teclado
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(binding.etBuscar.windowToken, 0)
+                true
+            } else {
+                false
+            }
+        }
+        val fragmentContainer = findViewById<FragmentContainerView>(R.id.fragment_Navar)
 
-        val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavarFragment
-        navarFragment?.setOnBotonClickListener(this)
+        // Agregar el fragmento al contenedor
+        val navarFragment = NavbarFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(fragmentContainer.id, navarFragment)
+            .commit()
+        navarFragment.setOnBotonClickListener(this)
 
         initRecyclerView()
 
@@ -35,13 +69,15 @@ class BibliotecaActivity : AppCompatActivity(), NavarFragment.OnBotonClickListen
             startActivity(intent)
         }
     }
-
     private fun initRecyclerView() {
-        recyclerViewBiblioteca = findViewById(R.id.recyrclerViewBiblioteca)
-        recyclerViewBiblioteca.layoutManager = LinearLayoutManager(this)
-        bibliotecaAdapter = BibliotecaAdapter(this, GameRepository.games)
-        recyclerViewBiblioteca.adapter = bibliotecaAdapter
+        adapter = BibliotecaAdapter(
+            context = this,
+            gameList = gameMutableList
+        )
+        binding.recyrclerViewBiblioteca.layoutManager = llmanager
+        binding.recyrclerViewBiblioteca.adapter = adapter
     }
+
     override fun onInicioClick() {
         val intent = Intent(this, PantallaPrincipalActivity::class.java)
         startActivity(intent)
