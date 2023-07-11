@@ -22,6 +22,7 @@ class BibliotecaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val botonComprar = view.findViewById<Button>(R.id.btnComprar)
 
     fun render(context: Context, juego: Game) {
+        var acumulador: Double = 0.0
         val carrito = CarritoRepository.carrito
 
         gameName.text = juego.name
@@ -40,6 +41,8 @@ class BibliotecaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 if (!isGamePurchased) {
                     showToast(context, "El juego se agregó al carrito")
                     carrito.add(juego)
+                    acumulador += juego.price
+                    CarritoRepository.carritoTotal.add(acumulador)
                 } else {
                     showToast(context, "El usuario ya ha comprado este juego")
                 }

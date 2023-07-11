@@ -1,6 +1,5 @@
 package com.example.tp_parte_2.biblioteca
 
-import Entidades.Game
 import NavarFragment
 import Repository.GameRepository
 import android.content.Intent
@@ -9,19 +8,17 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recyclerviewexamplo.CarritoActivity
+
 import com.example.tp_parte_2.ComprasActivity
 import com.example.tp_parte_2.PantallaPrincipalActivity
 import com.example.tp_parte_2.R
 import com.example.tp_parte_2.RecargarActivity
 import com.example.tp_parte_2.adapter.BibliotecaAdapter
-
 class BibliotecaActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
 
     private lateinit var btnCarrito: Button
     private lateinit var recyclerViewBiblioteca: RecyclerView
     private lateinit var bibliotecaAdapter: BibliotecaAdapter
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,18 +27,15 @@ class BibliotecaActivity : AppCompatActivity(), NavarFragment.OnBotonClickListen
         val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavarFragment
         navarFragment?.setOnBotonClickListener(this)
 
-        initView()
         initRecyclerView()
-    }
 
-    private fun initView() {
         btnCarrito = findViewById(R.id.botonCarrito)
         btnCarrito.setOnClickListener {
             val intent = Intent(this, CarritoActivity::class.java)
             startActivity(intent)
         }
-
     }
+
     private fun initRecyclerView() {
         recyclerViewBiblioteca = findViewById(R.id.recyrclerViewBiblioteca)
         recyclerViewBiblioteca.layoutManager = LinearLayoutManager(this)
@@ -54,7 +48,6 @@ class BibliotecaActivity : AppCompatActivity(), NavarFragment.OnBotonClickListen
     }
 
     override fun onBibliotecaClick() {
-        // No se necesita hacer nada aquí, ya estamos en la pantalla de Biblioteca
     }
 
     override fun onComprasClick() {

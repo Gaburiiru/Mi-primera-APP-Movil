@@ -53,8 +53,6 @@ class PantallaPrincipalActivity : AppCompatActivity(), NavarFragment.OnBotonClic
     }
 
     override fun onInicioClick() {
-        val intent = Intent(this, PantallaPrincipalActivity::class.java)
-        startActivity(intent)
     }
 
     override fun onBibliotecaClick() {

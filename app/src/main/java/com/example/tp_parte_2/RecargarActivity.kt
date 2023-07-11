@@ -70,7 +70,5 @@ class RecargarActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener
     }
 
     override fun onRecargaClick() {
-        val intent = Intent(this, RecargarActivity::class.java)
-        startActivity(intent)
     }
 }

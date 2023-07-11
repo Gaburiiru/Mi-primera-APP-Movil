@@ -1,10 +1,13 @@
-package com.example.recyclerviewexamplo
+package com.example.tp_parte_2.biblioteca
 
 import Entidades.Game
 import NavarFragment
 import Repository.CarritoRepository
+import Repository.CarritoRepository.carritoTotal
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerviewexamplo.adapter.CarritoAdapter
@@ -12,16 +15,18 @@ import com.example.tp_parte_2.ComprasActivity
 import com.example.tp_parte_2.PantallaPrincipalActivity
 import com.example.tp_parte_2.R
 import com.example.tp_parte_2.RecargarActivity
-import com.example.tp_parte_2.biblioteca.BibliotecaActivity
 import com.example.tp_parte_2.databinding.ActivityCarritoBinding
+
+@SuppressLint("StaticFieldLeak")
+private lateinit var totalApagar: TextView
 
 class CarritoActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener {
 
     private lateinit var binding: ActivityCarritoBinding
-    private var carritoMutableList: MutableList<Game> =
-        CarritoRepository.carrito.toMutableList()
+    private lateinit var carritoMutableList: MutableList<Game>
     private lateinit var adapter: CarritoAdapter
     private val llmanager = LinearLayoutManager(this)
+    private var carritoTotal: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,22 +36,29 @@ class CarritoActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener 
 
         val navarFragment = supportFragmentManager.findFragmentById(R.id.fragment_Navar) as? NavarFragment
         navarFragment?.setOnBotonClickListener(this)
+
+        updateTotalApagar()
     }
 
     private fun initRecyclerView() {
+        carritoMutableList = CarritoRepository.carrito.toMutableList()
         adapter = CarritoAdapter(
             carritoList = carritoMutableList,
             onClickDelete = { position -> onDeletedItem(position) }
         )
         binding.recyrclerViewCarrito.layoutManager = llmanager
         binding.recyrclerViewCarrito.adapter = adapter
-
     }
+
     private fun onDeletedItem(position: Int) {
-        if (position >= 0 && position < carritoMutableList.size) {
-            carritoMutableList.removeAt(position)
-            adapter.notifyItemRemoved(position)
-        }
+        carritoMutableList.removeAt(position)
+        adapter.notifyItemRemoved(position)
+        updateTotalApagar()
+    }
+
+    private fun updateTotalApagar() {
+        carritoTotal = carritoMutableList.sumByDouble { it.price }
+        binding.totalApagar.text = carritoTotal.toString()
     }
     override fun onInicioClick() {
         val intent = Intent(this, PantallaPrincipalActivity::class.java)

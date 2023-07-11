@@ -26,8 +26,6 @@ class ComprasActivity : AppCompatActivity(), NavarFragment.OnBotonClickListener 
     }
 
     override fun onComprasClick() {
-        val intent = Intent(this, ComprasActivity::class.java)
-        startActivity(intent)
     }
 
     override fun onRecargaClick() {
