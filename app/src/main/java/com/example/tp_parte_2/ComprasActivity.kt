@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentContainerView
 import com.example.tp_parte_2.biblioteca.BibliotecaActivity
 import com.example.tp_parte_2.databinding.ActivityComprasBinding
+import java.util.*
 
 class ComprasActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener {
 
@@ -25,7 +26,7 @@ class ComprasActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener
     private lateinit var radioGroup: RadioGroup
 
     @SuppressLint("MissingInflatedId")
-    override fun onCreate(savedInstanceState: Bundle?)    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityComprasBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -49,11 +50,50 @@ class ComprasActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener
                 R.id.buttonNakama -> {
                     comprarJuego("Nakama") { totalAbonar -> Nakama.calcularComision(totalAbonar) }
                 }
-                else -> "Porfavor seleccione una tienda"
+                else -> mostrarMensajeSeleccionaTienda()
+            }
+        }
+
+        binding.realizarPago.setOnClickListener {
+            if (radioGroup.checkedRadioButtonId == -1) {
+                mostrarMensajeSeleccionaTienda()
+            } else {
+                val totalAbonar = sumaCarrito()
+                val comision = calcularComisionSeleccionada(totalAbonar)
+                val subTotal = comision + totalAbonar
+                val createdDate = session[0].createdDate
+                val reintegro = CashbackProvider.cashback(subTotal, createdDate)
+
+                if (reintegro == 0.0) {
+                    binding.cashback.text = "NO APLICA"
+                } else {
+                    binding.cashback.text = String.format("%.2f", reintegro)
+                }
+                binding.total.text = String.format("%.2f",(subTotal).minus(reintegro))
+
+                showToast("Tienda seleccionada: ${obtenerTiendaSeleccionada()}")
+
+                if (session[0].money >= totalAbonar) {
+                    session[0].restarMoney(subTotal.minus(reintegro))
+                    agregarCompra()
+
+                    // Limpiar carrito y carritoTotal
+                    carrito.clear()
+                    carritoTotal.clear()
+
+                    binding.comision.text = ""
+                    binding.cashback.text = ""
+                    binding.total.text = "0.00"
+
+                    showToast("Compra realizada exitosamente")
+                } else {
+                    showToast("Debe recargar el saldo")
+                }
             }
         }
     }
-    fun comprarJuego(tienda: String, comisionCalculator: (Double) -> Double) {
+
+    private fun comprarJuego(tienda: String, comisionCalculator: (Double) -> Double) {
         if (carritoTotal.isNotEmpty() && carritoTotal[0] > 0) {
             val totalAbonar = sumaCarrito()
             val comision = comisionCalculator(totalAbonar)
@@ -69,43 +109,52 @@ class ComprasActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener
             } else {
                 binding.cashback.text = String.format("%.2f", reintegro)
             }
-            binding.total.text = String.format("%.2f",totalAbonar.plus(comision).minus(reintegro))
+            binding.total.text = String.format("%.2f", subTotal.minus(reintegro))
 
             showToast("Tienda seleccionada: $tienda")
-
-            binding.realizarPago.setOnClickListener(){
-                if (session[0].money >= totalAbonar){
-                    session[0].restarMoney(totalAbonar)
-                    agregarCompra()
-
-                    // Limpiar carrito y carritoTotal
-                    carrito.clear()
-                    carritoTotal.clear()
-
-                    binding.comision.text = ""
-                    binding.cashback.text = ""
-                    binding.total.text = ""
-                }else{
-                    showToast("Debe recargar el saldo")
-                }
-            }
         } else {
             showToast("Por favor, seleccione un juego.")
         }
     }
+
+    private fun mostrarMensajeSeleccionaTienda() {
+        showToast("Por favor, seleccione una tienda")
+    }
+
+    private fun calcularComisionSeleccionada(totalAbonar: Double): Double {
+        return when (obtenerTiendaSeleccionada()) {
+            "Steam" -> Steam.calcularComision(totalAbonar)
+            "Epic Games" -> EpicGames.calcularComision(totalAbonar)
+            "Nakama" -> Nakama.calcularComision(totalAbonar)
+            else -> 0.0
+        }
+    }
+    private fun obtenerTiendaSeleccionada(): String {
+        return when (radioGroup.checkedRadioButtonId) {
+            R.id.buttonSteam -> "Steam"
+            R.id.buttonEpicStore -> "Epic Games"
+            R.id.buttonNakama -> "Nakama"
+            else -> ""
+        }
+    }
+
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
     override fun onInicioClick() {
         val intent = Intent(this, PantallaPrincipalActivity::class.java)
         startActivity(intent)
     }
+
     override fun onBibliotecaClick() {
         val intent = Intent(this, BibliotecaActivity::class.java)
         startActivity(intent)
     }
+
     override fun onComprasClick() {
     }
+
     override fun onRecargaClick() {
         val intent = Intent(this, RecargarActivity::class.java)
         startActivity(intent)

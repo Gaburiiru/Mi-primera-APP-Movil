@@ -195,6 +195,7 @@
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold"
+            android:text="@string/_0_00"
             app:layout_constraintBottom_toTopOf="@+id/realizarPago"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

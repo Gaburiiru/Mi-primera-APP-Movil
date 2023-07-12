@@ -16,7 +16,7 @@
         android:id="@+id/simbolo_de_peso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:text="$"
         android:textColor="@color/black"
@@ -33,18 +33,21 @@
         android:id="@+id/ivGameBiblioteca"
         android:layout_width="120dp"
         android:layout_height="120dp"
+        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533"
         tools:background="@color/black" />
 
     <TextView
         android:id="@+id/tvGameNameBiblioteca"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
         android:ellipsize="end"
         android:maxLines="1"
         android:textColor="@color/black"
@@ -56,14 +59,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/ivGameBiblioteca"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13"
+        app:layout_constraintVertical_bias="0.016"
         tools:text="NeedForSpeed" />
 
     <TextView
         android:id="@+id/tvReleaseGameBiblioteca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:textColor="@color/black"
         android:textSize="15sp"
@@ -77,14 +80,14 @@
         android:id="@+id/tvGenreGameBiblioteca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/ivGameBiblioteca"
-        app:layout_constraintTop_toBottomOf="@+id/tvReleaseGameBiblioteca"
+        app:layout_constraintStart_toEndOf="@+id/tvReleaseGameBiblioteca"
+        app:layout_constraintTop_toBottomOf="@+id/tvGameNameBiblioteca"
         tools:text="Racing" />
 
     <TextView
@@ -104,20 +107,37 @@
         app:layout_constraintVertical_bias="0.0"
         tools:text="200,2" />
 
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/ars"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvPriceGameBiblioteca"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.593" />
+
     <Button
         android:id="@+id/btnComprar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
         android:backgroundTint="@color/colorboton"
         android:text="@string/comprar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.698"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tvPriceGameBiblioteca"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

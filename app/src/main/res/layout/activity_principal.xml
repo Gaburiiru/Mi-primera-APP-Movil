@@ -65,17 +65,17 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.013"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.573"
+            app:layout_constraintVertical_bias="0.576"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/dateInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="40dp"
             android:text="fecha"
             android:textColor="@color/datosInfo"
             android:textSize="25sp"
@@ -101,14 +101,14 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.573"
+            app:layout_constraintVertical_bias="0.576"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/moneyInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
+            android:layout_marginEnd="40dp"
             android:text="monto"
             android:textColor="@color/datosInfo"
             android:textSize="25sp"

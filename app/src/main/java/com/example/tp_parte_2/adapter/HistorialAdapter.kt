@@ -1,10 +1,18 @@
 package com.example.tp_parte_2.adapter
 
 import Entidades.Purchase
+import Repository.GameRepository.games
+import Repository.UserRepository
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.tp_parte_2.R
+
 
 class HistorialAdapter(private val userId: String, private val purchasesList: List<Purchase>) : RecyclerView.Adapter<HistorialViewHolder>() {
 

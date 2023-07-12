@@ -20,7 +20,7 @@ object CarritoRepository {
     }
 
     fun agregarCompra() {
-        val purchasesList = PurchaseRepositoryProvider.purchasesList // Obtener la lista de compras desde el repositorio
+        val purchasesList = PurchaseRepositoryProvider.purchasesList
         val id: Long = purchasesList.last().id + 1
         val fechaActual = Calendar.getInstance().time
         val formatoFecha = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())

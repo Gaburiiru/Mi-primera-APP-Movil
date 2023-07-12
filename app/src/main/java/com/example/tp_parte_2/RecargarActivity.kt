@@ -18,7 +18,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentContainerView
 import com.example.tp_parte_2.biblioteca.BibliotecaActivity
-import com.example.tp_parte_2.databinding.ActivityBibliotecaBinding
 import com.example.tp_parte_2.databinding.ActivityRecargarBinding
 
 class RecargarActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener {
