@@ -4,11 +4,10 @@ open abstract class Intermediario {
 
     var _nombreIntermediario: String = ""
 
-
         get() {
             return _nombreIntermediario
         }
 
-    abstract fun calcularComision(): Double
+    abstract fun calcularComision(d: Double): Double
 
 }

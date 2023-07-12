@@ -10,9 +10,9 @@ object UserRepository {
     val session = mutableListOf<User>()
 
     init {
-        users.add(User("1504L", "BRIAN_BAYARRI", "abc123", "Brian", "Bayarri", 350.50, "2022-12-10"))
-        users.add(User("2802L", "a", "a", "Aylen", "Hoz", 200.50, "2021-01-11"))
-        users.add(User("1510L", "DIEGOTE", "@12345", "Diego", "Gonzales", 12.0, "2018-04-15"))
+        users.add(User("1504L", "BRIAN_BAYARRI", "abc123", "Brian", "Bayarri", 350.50, "2022/12/10"))
+        users.add(User("2802L", "AHOZ","lock_password", "Aylen", "Hoz", 200.50, "2021/01/11"))
+        users.add(User("1510L", "DIEGOTE", "@12345", "Diego", "Gonzales", 12.0, "2018/04/15"))
     }
 
     fun existe(nickname: String,password: String): Boolean {

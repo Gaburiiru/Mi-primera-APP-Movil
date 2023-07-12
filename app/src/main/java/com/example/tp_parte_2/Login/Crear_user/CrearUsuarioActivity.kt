@@ -40,9 +40,8 @@ class CrearUsuarioActivity : AppCompatActivity() {
 
             if(validateInput()) {
 
-
                 val fecha = Calendar.getInstance()
-                val formatoFecha = SimpleDateFormat("yyyy-MM-dd")
+                val formatoFecha = SimpleDateFormat("dd/MM/yyyy")
                 val fechaFormateada = formatoFecha.format(fecha.time)
                 val nuevo = User("","","","","",0.0,fechaFormateada.toString())
                 val usuario = usuario.text.toString()

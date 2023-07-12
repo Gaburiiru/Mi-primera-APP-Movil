@@ -52,9 +52,8 @@ class BibliotecaActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListe
                 false
             }
         }
-        val fragmentContainer = findViewById<FragmentContainerView>(R.id.fragment_Navar)
 
-        // Agregar el fragmento al contenedor
+        val fragmentContainer = findViewById<FragmentContainerView>(R.id.fragment_Navar)
         val navarFragment = NavbarFragment()
         supportFragmentManager.beginTransaction()
             .replace(fragmentContainer.id, navarFragment)

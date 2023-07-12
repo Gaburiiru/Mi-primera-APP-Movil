@@ -52,7 +52,7 @@ class CarritoActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener
 
     private fun updateTotalApagar() {
         carritoTotal = carritoMutableList.sumByDouble { it.price }
-        binding.totalApagar.text = carritoTotal.toString()
+        binding.totalApagar.text = String.format("%.2f", carritoTotal)
     }
     override fun onInicioClick() {
         val intent = Intent(this, PantallaPrincipalActivity::class.java)

@@ -2,10 +2,7 @@ package Entidades.Intermediarios
 
 object  Steam : Intermediario() {
 
-    init{
-        _nombreIntermediario = TiendaDeCompras.STEAM.toString()
-    }
-    override fun calcularComision(): Double {
-        return 0.02
+    override fun calcularComision(total: Double): Double {
+        return total.times(0.02)
     }
 }

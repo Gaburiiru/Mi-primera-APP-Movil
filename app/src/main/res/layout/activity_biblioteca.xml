@@ -50,7 +50,7 @@
         android:layout_height="80dp"
         android:layout_margin="5dp"
         android:layout_marginBottom="5dp"
-        android:background="@drawable/targeta_secundaria"
+        android:background="@drawable/tarjeta_secundaria"
         app:layout_constraintBottom_toTopOf="@+id/recyrclerViewBiblioteca"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

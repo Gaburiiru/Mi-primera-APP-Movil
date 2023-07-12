@@ -5,8 +5,10 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="datosInfo">#016C87</color>
     <color name="black">#FF000000</color>
-    <color name="datosInfo">#006363</color>
+    <color name="datosInfo2">#006363</color>
+    <color name="datosInfo3">#523966</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fondo">#14141B</color>
     <color name="azul">#2196F3</color>
@@ -16,4 +18,6 @@
     <color name="colorDos">#acd7ee</color>
     <color name="colorTres">#ccfed8</color>
     <color name="colorComprado">#3EBC5C</color>
+    <color name="impuesto">#FFEB3B</color>
+    <color name="cashback">#F44336</color>
 </resources>
