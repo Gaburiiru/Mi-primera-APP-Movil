@@ -62,6 +62,7 @@ class CrearUsuarioActivity : AppCompatActivity() {
                             nuevo.surname = apellido;
                             UserRepository.agregar(nuevo);
                             Toast.makeText(this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show();
+                            finish()
                         }
                     }else{
                         Toast.makeText(this, "El apellido no puede contener numeros o estar vacio.", Toast.LENGTH_SHORT).show()
