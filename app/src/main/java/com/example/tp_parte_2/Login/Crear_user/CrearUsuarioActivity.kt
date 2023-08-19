@@ -39,7 +39,6 @@ class CrearUsuarioActivity : AppCompatActivity() {
         btnCrearUsuario.setOnClickListener {
 
             if(validateInput()) {
-
                 val fecha = Calendar.getInstance()
                 val formatoFecha = SimpleDateFormat("dd/MM/yyyy")
                 val fechaFormateada = formatoFecha.format(fecha.time)

@@ -24,7 +24,6 @@ class ComprasActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener
 
     private lateinit var binding: ActivityComprasBinding
     private lateinit var radioGroup: RadioGroup
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,11 +75,9 @@ class ComprasActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListener
                 if (session[0].money >= totalAbonar) {
                     session[0].restarMoney(subTotal.minus(reintegro))
                     agregarCompra()
-
                     // Limpiar carrito y carritoTotal
                     carrito.clear()
                     carritoTotal.clear()
-
                     binding.comision.text = ""
                     binding.cashback.text = ""
                     binding.total.text = "0.00"

@@ -105,11 +105,13 @@
         app:layout_constraintVertical_bias="0.0"
         tools:text="200,2" />
 
+
     <TextView
         android:id="@+id/text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:text="@string/ars"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -118,9 +120,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tvPriceGameCarrito"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.593" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tvGenreGameCarrito"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnEliminar"

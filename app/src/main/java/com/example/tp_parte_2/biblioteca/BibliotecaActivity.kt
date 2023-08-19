@@ -43,7 +43,8 @@ class BibliotecaActivity : AppCompatActivity(), NavbarFragment.OnBotonClickListe
             adapter.updateGameList(juegosFiltrados)
         }
         binding.etBuscar.setOnEditorActionListener { _, actionId, event ->
-            if (actionId == EditorInfo.IME_ACTION_DONE || event.keyCode == KeyEvent.KEYCODE_ENTER) {
+            if (actionId == EditorInfo.IME_ACTION_DONE || event?.keyCode == KeyEvent.KEYCODE_ENTER) {
+                binding.root.requestFocus()
                 // Ocultar el teclado
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(binding.etBuscar.windowToken, 0)

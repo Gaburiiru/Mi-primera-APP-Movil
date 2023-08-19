@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Games Breack</string>
+    <string name="app_name" translatable="false">Games Break</string>
     <string name="nombre_de_usuario" translatable="false">Nombre de usuario</string>
     <string name="nombre" translatable="false">Nombre</string>
     <string name="apellido" translatable="false">Apellido</string>
